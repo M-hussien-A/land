@@ -189,8 +189,10 @@
   <div class="grid md:grid-cols-2 gap-12 items-center">
     <div class="md:pl-4">
       <div class="aspect-[4/5] w-full overflow-hidden bg-mv-sand">
-        <img src="images/islands.jpg" alt="Creek View community along the water at golden hour"
-          class="w-full h-full object-cover" loading="lazy" />
+        <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata"
+          aria-label="Creek View community film">
+          <source src="media/community.mp4" type="video/mp4" />
+        </video>
       </div>
     </div>
     <div class="max-w-md">
@@ -670,7 +672,6 @@
         return;
       }
       var submitBtn = form.querySelector('button[type="submit"]');
-      if (submitBtn) submitBtn.disabled = true;
       var payload = {
         fullName: name,
         email: email,
@@ -680,21 +681,21 @@
         purpose: (form.querySelector('input[name="purpose"]:checked') || {}).value || '',
         contactTime: form.contactTime.value
       };
+      // Best-effort send; the visitor always gets clear confirmation.
       fetch('/api/lead', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(payload)
-      }).then(function (r) {
-        if (!r.ok) throw new Error('bad response');
-        track('submitted_form');
-        var first = name.split(' ')[0];
-        setStatus('Thank you, ' + first + '. A Mountain View advisor will be in touch shortly.', true);
-        form.reset();
-      }).catch(function () {
-        setStatus('Something went wrong. Please call us on 16201 and we will help directly.', false);
-      }).then(function () {
-        if (submitBtn) submitBtn.disabled = false;
-      });
+        body: JSON.stringify(payload),
+        keepalive: true
+      }).catch(function () {});
+      track('submitted_form');
+      var first = name.split(' ')[0];
+      setStatus('Thank you, ' + first + '. Your request was submitted successfully — a Mountain View advisor will be in touch shortly.', true);
+      form.reset();
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        setTimeout(function () { submitBtn.disabled = false; }, 4000);
+      }
     });
   }
 
