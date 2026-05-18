@@ -1,4 +1,8 @@
 // Receives a Register-interest submission and appends it to the Google Sheet.
+
+// Override per environment by setting SHEETS_WEBHOOK_URL in Vercel.
+const DEFAULT_WEBHOOK =
+  'https://script.google.com/macros/s/AKfycbycwnYI0UKHzuWFfEqyPKC_j0x5ewds-r1cv-OqPjjeqENPGuXCHZqnGswwnTUtro85rg/exec';
 function readCookie(header, name) {
   const m = (header || '').match(new RegExp('(?:^|;\\s*)' + name + '=([^;]+)'));
   return m ? m[1] : '';
@@ -38,11 +42,7 @@ export default async function handler(req, res) {
     return;
   }
 
-  const webhook = process.env.SHEETS_WEBHOOK_URL;
-  if (!webhook) {
-    res.status(500).json({ ok: false, error: 'SHEETS_WEBHOOK_URL not configured' });
-    return;
-  }
+  const webhook = process.env.SHEETS_WEBHOOK_URL || DEFAULT_WEBHOOK;
 
   try {
     const r = await fetch(webhook, {

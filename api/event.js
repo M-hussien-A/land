@@ -2,6 +2,10 @@
 // correlated to the visit via the rid cookie set by middleware.
 const ALLOWED = ['scrolled_50', 'clicked_cta', 'submitted_form'];
 
+// Override per environment by setting SHEETS_WEBHOOK_URL in Vercel.
+const DEFAULT_WEBHOOK =
+  'https://script.google.com/macros/s/AKfycbycwnYI0UKHzuWFfEqyPKC_j0x5ewds-r1cv-OqPjjeqENPGuXCHZqnGswwnTUtro85rg/exec';
+
 function readCookie(header, name) {
   const m = (header || '').match(new RegExp('(?:^|;\\s*)' + name + '=([^;]+)'));
   return m ? m[1] : '';
@@ -23,7 +27,7 @@ export default async function handler(req, res) {
     return;
   }
 
-  const webhook = process.env.SHEETS_WEBHOOK_URL;
+  const webhook = process.env.SHEETS_WEBHOOK_URL || DEFAULT_WEBHOOK;
   if (webhook) {
     await fetch(webhook, {
       method: 'POST',

@@ -4,6 +4,11 @@ import { next } from '@vercel/edge';
 // logged even when client-side analytics is blocked by ad blockers or iOS.
 export const config = { matcher: '/' };
 
+// Google Apps Script web app that writes to the Creek View Sheet.
+// Override per environment by setting the SHEETS_WEBHOOK_URL env var in Vercel.
+const DEFAULT_WEBHOOK =
+  'https://script.google.com/macros/s/AKfycbycwnYI0UKHzuWFfEqyPKC_j0x5ewds-r1cv-OqPjjeqENPGuXCHZqnGswwnTUtro85rg/exec';
+
 function readCookie(header, name) {
   const m = (header || '').match(new RegExp('(?:^|;\\s*)' + name + '=([^;]+)'));
   return m ? m[1] : '';
@@ -21,7 +26,7 @@ export default function middleware(request, context) {
     );
   }
 
-  const webhook = process.env.SHEETS_WEBHOOK_URL;
+  const webhook = process.env.SHEETS_WEBHOOK_URL || DEFAULT_WEBHOOK;
   if (webhook) {
     const visit = {
       type: 'visit',
