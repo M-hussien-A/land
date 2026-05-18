@@ -625,7 +625,33 @@
     track.innerHTML = galleryScenes.map(galleryCard).join('');
   }
 
-  // --- Register form submit ---
+  // --- Analytics: fire a server-side event (correlated by the rid cookie) ---
+  var firedEvents = {};
+  function track(eventType) {
+    if (firedEvents[eventType]) return;
+    firedEvents[eventType] = true;
+    try {
+      fetch('/api/event', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ event_type: eventType }),
+        keepalive: true
+      }).catch(function () {});
+    } catch (err) {}
+  }
+
+  // scrolled_50 — fired once when the visitor passes the page midpoint
+  window.addEventListener('scroll', function () {
+    var scrolled = window.scrollY + window.innerHeight;
+    if (scrolled >= document.documentElement.scrollHeight * 0.5) track('scrolled_50');
+  }, { passive: true });
+
+  // clicked_cta — any Register interest / hotline call-to-action
+  document.querySelectorAll('a[href="#register"], a[href^="tel:"]').forEach(function (el) {
+    el.addEventListener('click', function () { track('clicked_cta'); });
+  });
+
+  // --- Register form submit -> /api/lead (Google Sheet) ---
   var form = document.getElementById('register-form');
   if (form) {
     form.addEventListener('submit', function (e) {
@@ -634,17 +660,41 @@
       var name = (form.fullName.value || '').trim();
       var email = (form.email.value || '').trim();
       var phone = (form.phone.value || '').trim();
+      function setStatus(msg, ok) {
+        status.textContent = msg;
+        status.classList.remove('hidden', 'text-mv-forest', 'text-mv-terracotta');
+        status.classList.add(ok ? 'text-mv-forest' : 'text-mv-terracotta');
+      }
       if (!name || !email || !phone) {
-        status.textContent = 'Please add your name, email, and phone so we can reach you.';
-        status.classList.remove('hidden', 'text-mv-forest');
-        status.classList.add('text-mv-terracotta');
+        setStatus('Please add your name, email, and phone so we can reach you.', false);
         return;
       }
-      var first = name.split(' ')[0];
-      status.textContent = 'Thank you, ' + first + '. A Mountain View advisor will be in touch shortly.';
-      status.classList.remove('hidden', 'text-mv-terracotta');
-      status.classList.add('text-mv-forest');
-      form.reset();
+      var submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+      var payload = {
+        fullName: name,
+        email: email,
+        phone: phone,
+        whatsapp: form.whatsapp.checked,
+        unitType: form.unitType.value,
+        purpose: (form.querySelector('input[name="purpose"]:checked') || {}).value || '',
+        contactTime: form.contactTime.value
+      };
+      fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function (r) {
+        if (!r.ok) throw new Error('bad response');
+        track('submitted_form');
+        var first = name.split(' ')[0];
+        setStatus('Thank you, ' + first + '. A Mountain View advisor will be in touch shortly.', true);
+        form.reset();
+      }).catch(function () {
+        setStatus('Something went wrong. Please call us on 16201 and we will help directly.', false);
+      }).then(function () {
+        if (submitBtn) submitBtn.disabled = false;
+      });
     });
   }
 

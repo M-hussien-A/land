@@ -1,0 +1,10 @@
+{
+  "name": "creek-view",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Creek View by Mountain View — project landing page",
+  "dependencies": {
+    "@vercel/edge": "^1.2.1"
+  }
+}
