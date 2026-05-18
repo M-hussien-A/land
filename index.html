@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Creek View · Mountain View — A new beginning</title>
+<meta name="description" content="Creek View by Mountain View — a signature community of 119 feddans in front of Hyde Park, New Administrative Capital, with 70% green and water." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          mv: {
+            cream: '#F5F1E8',
+            sand: '#E8DFCE',
+            stone: '#C9BFA7',
+            ink: '#1A1B1E',
+            muted: '#6E6A60',
+            forest: '#2B4A3E',
+            terracotta: '#B9663E',
+          },
+        },
+        fontFamily: {
+          display: ['"Cormorant Garamond"', 'serif'],
+          body: ['Inter', 'system-ui', 'sans-serif'],
+        },
+        maxWidth: {
+          '6xl': '1152px',
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, sans-serif; }
+  .font-display { font-family: 'Cormorant Garamond', serif; }
+  ::selection { background: #2B4A3E; color: #F5F1E8; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+</head>
+<body class="bg-mv-cream text-mv-ink antialiased" id="top">
+
+<!-- 1. Top utility strip -->
+<div class="bg-mv-sand text-mv-ink/80">
+  <div class="max-w-6xl mx-auto flex items-center justify-between py-2 px-6 text-[12px]">
+    <p class="font-display italic text-mv-muted">Life at Mountain View</p>
+    <div class="flex items-center gap-4">
+      <a href="tel:16201" class="hover:text-mv-forest transition-colors">Call us 16201</a>
+      <div class="hidden sm:flex items-center gap-3 text-mv-muted">
+        <a href="#" aria-label="Facebook" class="hover:text-mv-forest transition-colors">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-9h3l1-4h-4V7c0-1.1.4-2 2-2h2V1.1C18.3 1 17 1 15.6 1 12.4 1 10 3 10 6.5V9H7v4h3v9h3z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram" class="hover:text-mv-forest transition-colors">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn" class="hover:text-mv-forest transition-colors">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.5 8h4V24h-4V8zM8 8h3.8v2.2h.05c.53-1 1.83-2.2 3.95-2.2 4.2 0 5 2.8 5 6.4V24h-4v-7c0-1.7-.03-3.9-2.4-3.9s-2.75 1.85-2.75 3.77V24H8V8z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube" class="hover:text-mv-forest transition-colors">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.5a3 3 0 0 0-2.1-2.1C19.5 4 12 4 12 4s-7.5 0-9.4.4A3 3 0 0 0 .5 6.5 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.5 3 3 0 0 0 2.1 2.1C4.5 20 12 20 12 20s7.5 0 9.4-.4a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.5zM9.5 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. Sticky nav -->
+<header class="sticky top-0 z-50 bg-mv-cream/90 backdrop-blur border-b border-mv-stone/40">
+  <div class="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
+    <div>
+      <a href="#top" class="font-display tracking-widest text-mv-ink text-xl">
+        MOUNTAIN <span class="text-mv-forest">VIEW</span>
+      </a>
+      <p class="text-[11px] uppercase tracking-[0.18em] text-mv-muted mt-1">
+        Communities · Creek View
+      </p>
+    </div>
+
+    <nav class="hidden md:flex items-center gap-8 text-sm text-mv-muted">
+      <a href="#community" class="hover:text-mv-ink transition-colors">Communities</a>
+      <a href="#story" class="hover:text-mv-ink transition-colors">Our Story</a>
+      <a href="#gallery" class="hover:text-mv-ink transition-colors">Media Room</a>
+      <a href="#register" class="hover:text-mv-ink transition-colors">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="tel:16201" class="hidden md:inline-block border border-mv-ink rounded-none px-5 py-2.5 text-sm tracking-wider hover:bg-mv-ink hover:text-mv-cream transition-colors">
+        Call us 16201
+      </a>
+      <a href="#register" class="bg-mv-forest text-mv-cream rounded-none px-5 py-2.5 text-sm tracking-wider hover:bg-mv-ink transition-colors">
+        Register interest
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- 3. Hero — full-bleed cover photograph -->
+<section class="w-full h-[60vh] md:h-[75vh] overflow-hidden bg-mv-sand">
+  <svg viewBox="0 0 1600 800" class="w-full h-full object-cover" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Creek View community at golden hour">
+    <defs>
+      <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0%"  stop-color="#E8DFCE"/>
+        <stop offset="60%" stop-color="#F0D9B6"/>
+        <stop offset="100%" stop-color="#D9B58E"/>
+      </linearGradient>
+      <linearGradient id="water" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0%"  stop-color="#7A9DA8"/>
+        <stop offset="100%" stop-color="#3F5F6A"/>
+      </linearGradient>
+    </defs>
+    <rect width="1600" height="800" fill="url(#sky)"/>
+    <circle cx="1180" cy="210" r="70" fill="#F4E3C4" opacity="0.7"/>
+    <!-- distant skyline -->
+    <g fill="#2B4A3E" opacity="0.55">
+      <rect x="0"    y="400" width="160" height="120"/>
+      <rect x="200"  y="370" width="220" height="150"/>
+      <rect x="450"  y="390" width="160" height="130"/>
+      <rect x="660"  y="350" width="240" height="170"/>
+      <rect x="940"  y="380" width="180" height="140"/>
+      <rect x="1170" y="395" width="200" height="125"/>
+      <rect x="1400" y="385" width="200" height="135"/>
+    </g>
+    <!-- low-rise buildings strip -->
+    <g fill="#F5F1E8">
+      <rect x="80"  y="520" width="240" height="100"/>
+      <rect x="360" y="510" width="220" height="110"/>
+      <rect x="620" y="525" width="180" height="95"/>
+      <rect x="840" y="515" width="220" height="105"/>
+      <rect x="1100" y="525" width="200" height="95"/>
+      <rect x="1340" y="510" width="220" height="110"/>
+    </g>
+    <!-- windows -->
+    <g fill="#B9663E" opacity="0.85">
+      <rect x="110" y="545" width="18" height="22"/><rect x="150" y="545" width="18" height="22"/>
+      <rect x="190" y="545" width="18" height="22"/><rect x="230" y="545" width="18" height="22"/>
+      <rect x="390" y="535" width="18" height="22"/><rect x="430" y="535" width="18" height="22"/>
+      <rect x="470" y="535" width="18" height="22"/><rect x="510" y="535" width="18" height="22"/>
+      <rect x="650" y="550" width="18" height="22"/><rect x="690" y="550" width="18" height="22"/>
+      <rect x="730" y="550" width="18" height="22"/>
+      <rect x="870" y="540" width="18" height="22"/><rect x="910" y="540" width="18" height="22"/>
+      <rect x="950" y="540" width="18" height="22"/><rect x="990" y="540" width="18" height="22"/>
+      <rect x="1130" y="550" width="18" height="22"/><rect x="1170" y="550" width="18" height="22"/>
+      <rect x="1210" y="550" width="18" height="22"/>
+      <rect x="1370" y="535" width="18" height="22"/><rect x="1410" y="535" width="18" height="22"/>
+      <rect x="1450" y="535" width="18" height="22"/><rect x="1490" y="535" width="18" height="22"/>
+    </g>
+    <!-- creek -->
+    <path d="M 0,640 Q 400,610 800,640 T 1600,650 L 1600,720 Q 800,690 0,710 Z" fill="url(#water)"/>
+    <!-- green plain -->
+    <path d="M 0,720 Q 800,710 1600,725 L 1600,800 L 0,800 Z" fill="#2B4A3E"/>
+    <!-- bridge -->
+    <path d="M 700,665 Q 800,640 900,665" stroke="#F5F1E8" stroke-width="4" fill="none"/>
+  </svg>
+</section>
+
+<!-- 4. Project name + lede block -->
+<section class="text-center max-w-3xl mx-auto px-6 py-20 md:py-32">
+  <p class="text-[11px] uppercase tracking-[0.18em] text-mv-muted">Projects · New Capital</p>
+  <h1 class="text-6xl md:text-8xl font-display font-normal text-mv-ink leading-none mt-4">Creek View</h1>
+  <p class="text-2xl md:text-3xl font-display italic text-mv-muted mt-6">
+    A new beginning · The view is just the beginning
+  </p>
+  <p class="max-w-2xl mx-auto text-mv-muted mt-10 text-lg leading-relaxed">
+    Creek View is Mountain View's newest signature community — 119 feddans set directly
+    in front of Hyde Park in the New Administrative Capital, with 70% of the land given to
+    water features, valleys, and landscaped green corridors. A new beginning, where every
+    home looks onto something alive.
+  </p>
+  <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+    <a href="#community" class="border border-mv-ink rounded-none px-7 py-3 text-sm tracking-wider hover:bg-mv-ink hover:text-mv-cream transition-colors">
+      Discover the project
+    </a>
+    <a href="#register" class="bg-mv-forest text-mv-cream rounded-none px-7 py-3 text-sm tracking-wider hover:bg-mv-ink transition-colors">
+      Register interest
+    </a>
+  </div>
+</section>
+
+<!-- 5. Stats row -->
+<section class="bg-mv-sand">
+  <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+    <div class="flex flex-wrap items-center justify-center gap-y-10">
+      <div class="flex flex-col items-center gap-1 px-8 w-1/2 md:w-auto">
+        <p class="font-display text-6xl md:text-7xl font-normal text-mv-forest leading-none">119</p>
+        <p class="text-[11px] uppercase tracking-[0.18em] text-mv-muted mt-2">Feddan</p>
+      </div>
+      <div class="hidden md:block bg-mv-stone w-px h-16"></div>
+      <div class="flex flex-col items-center gap-1 px-8 w-1/2 md:w-auto">
+        <p class="font-display text-6xl md:text-7xl font-normal text-mv-forest leading-none">70%</p>
+        <p class="text-[11px] uppercase tracking-[0.18em] text-mv-muted mt-2">Green &amp; water</p>
+      </div>
+      <div class="hidden md:block bg-mv-stone w-px h-16"></div>
+      <div class="flex flex-col items-center gap-1 px-8 w-1/2 md:w-auto">
+        <p class="font-display text-6xl md:text-7xl font-normal text-mv-forest leading-none">3 yrs</p>
+        <p class="text-[11px] uppercase tracking-[0.18em] text-mv-muted mt-2">From signing</p>
+      </div>
+      <div class="hidden md:block bg-mv-stone w-px h-16"></div>
+      <div class="flex flex-col items-center gap-1 px-8 w-1/2 md:w-auto">
+        <p class="font-display text-6xl md:text-7xl font-normal text-mv-forest leading-none">14 yrs</p>
+        <p class="text-[11px] uppercase tracking-[0.18em] text-mv-muted mt-2">Flexible installments</p>
+      </div>
+      <div class="hidden md:block bg-mv-stone w-px h-16"></div>
+      <div class="flex flex-col items-center gap-1 px-8 w-full md:w-auto">
+        <p class="font-display text-6xl md:text-7xl font-normal text-mv-forest leading-none">+6 mo</p>
+        <p class="text-[11px] uppercase tracking-[0.18em] text-mv-muted mt-2">After signing</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Editorial section A — image left, text right -->
+<section id="community" class="max-w-6xl mx-auto px-6 py-24 md:py-32">
+  <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div class="md:pl-4">
+      <div class="aspect-[4/5] w-full overflow-hidden bg-mv-sand">
+        <svg viewBox="0 0 800 1000" class="w-full h-full object-cover" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Master plan around the creek">
+          <defs>
+            <linearGradient id="skyA" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#EFE6D2"/><stop offset="100%" stop-color="#E2C9A2"/>
+            </linearGradient>
+          </defs>
+          <rect width="800" height="1000" fill="url(#skyA)"/>
+          <rect y="640" width="800" height="360" fill="#2B4A3E"/>
+          <path d="M0,560 Q200,540 400,565 T800,575 L800,660 Q400,640 0,650 Z" fill="#7A9DA8"/>
+          <g fill="#F5F1E8">
+            <rect x="60" y="470" width="150" height="110"/>
+            <rect x="260" y="450" width="130" height="130"/>
+            <rect x="440" y="475" width="140" height="105"/>
+            <rect x="620" y="455" width="130" height="125"/>
+          </g>
+          <g fill="#B9663E" opacity="0.85">
+            <rect x="90" y="500" width="16" height="20"/><rect x="130" y="500" width="16" height="20"/>
+            <rect x="290" y="485" width="16" height="20"/><rect x="330" y="485" width="16" height="20"/>
+            <rect x="470" y="505" width="16" height="20"/><rect x="510" y="505" width="16" height="20"/>
+            <rect x="650" y="490" width="16" height="20"/><rect x="690" y="490" width="16" height="20"/>
+          </g>
+          <g fill="#234037">
+            <circle cx="120" cy="720" r="42"/><circle cx="260" cy="760" r="55"/>
+            <circle cx="430" cy="710" r="48"/><circle cx="600" cy="770" r="60"/>
+            <circle cx="710" cy="700" r="40"/>
+          </g>
+          <path d="M300,560 Q400,535 500,560" stroke="#F5F1E8" stroke-width="5" fill="none"/>
+        </svg>
+      </div>
+    </div>
+    <div class="max-w-md">
+      <p class="text-[11px] uppercase tracking-[0.18em] text-mv-muted">The master plan</p>
+      <h2 class="font-display text-4xl md:text-5xl font-normal text-mv-ink leading-tight mt-4">
+        A community built around a creek
+      </h2>
+      <p class="text-mv-muted mt-6 leading-relaxed">
+        Inspired by the calm of water, Creek View is drawn around a winding creek that
+        threads through 119 feddans of valleys and landscaped green corridors. Seventy
+        percent of the land is left open — to water, to gardens, to room for life to
+        unfold slowly.
+      </p>
+      <p class="text-mv-muted mt-4 leading-relaxed">
+        Set directly in front of Hyde Park in the New Administrative Capital, the
+        community places every home within reach of greenery and the city alike.
+        Where every home looks onto something alive.
+      </p>
+      <p class="font-display italic text-2xl text-mv-forest mt-8">
+        Crafted with quiet intent, for a life lived outdoors.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 7. Editorial section B — text left, image right -->
+<section id="story" class="bg-mv-sand">
+  <div class="max-w-6xl mx-auto px-6 py-24 md:py-32">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="max-w-md md:order-1 order-2">
+        <p class="text-[11px] uppercase tracking-[0.18em] text-mv-muted">A home for every chapter</p>
+        <h2 class="font-display text-4xl md:text-5xl font-normal text-mv-ink leading-tight mt-4">
+          Lifestyle, on your terms
+        </h2>
+        <p class="text-mv-muted mt-6 leading-relaxed">
+          From a first Millennial one-bedroom to a sky-villa or an I-villa with its own
+          garden, Creek View offers a home for every chapter. Each is delivered
+          semi-finished, leaving room to shape the interior around the way you live.
+        </p>
+        <p class="text-mv-muted mt-4 leading-relaxed">
+          Designed for an elevated lifestyle, the community gathers its amenities along
+          the green corridors — walking paths, shaded courtyards, and water features
+          that make the everyday feel unhurried.
+        </p>
+        <p class="font-display italic text-2xl text-mv-forest mt-8">
+          A community designed for the rhythm of real life.
+        </p>
+      </div>
+      <div class="md:order-2 order-1 md:pr-4">
+        <div class="aspect-[4/5] w-full overflow-hidden bg-mv-cream">
+          <svg viewBox="0 0 800 1000" class="w-full h-full object-cover" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Lifestyle at Creek View">
+            <defs>
+              <linearGradient id="skyB" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#F0E7D4"/><stop offset="100%" stop-color="#E9CFA6"/>
+              </linearGradient>
+            </defs>
+            <rect width="800" height="1000" fill="url(#skyB)"/>
+            <circle cx="600" cy="220" r="80" fill="#F4E3C4" opacity="0.7"/>
+            <rect y="700" width="800" height="300" fill="#2B4A3E"/>
+            <g fill="#F5F1E8">
+              <rect x="120" y="380" width="220" height="340"/>
+              <rect x="420" y="320" width="260" height="400"/>
+            </g>
+            <g fill="#B9663E" opacity="0.85">
+              <rect x="150" y="420" width="30" height="40"/><rect x="210" y="420" width="30" height="40"/>
+              <rect x="270" y="420" width="30" height="40"/>
+              <rect x="150" y="500" width="30" height="40"/><rect x="210" y="500" width="30" height="40"/>
+              <rect x="270" y="500" width="30" height="40"/>
+              <rect x="455" y="370" width="34" height="46"/><rect x="525" y="370" width="34" height="46"/>
+              <rect x="595" y="370" width="34" height="46"/>
+              <rect x="455" y="460" width="34" height="46"/><rect x="525" y="460" width="34" height="46"/>
+              <rect x="595" y="460" width="34" height="46"/>
+            </g>
+            <g fill="#234037">
+              <circle cx="90" cy="780" r="55"/><circle cx="380" cy="820" r="70"/>
+              <circle cx="640" cy="790" r="62"/><circle cx="730" cy="850" r="50"/>
+            </g>
+            <path d="M0,690 Q400,670 800,695" stroke="#7A9DA8" stroke-width="26" fill="none"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Unit mix table -->
+<section id="units" class="max-w-6xl mx-auto px-6 py-24 md:py-32">
+  <div class="text-center max-w-2xl mx-auto">
+    <p class="text-[11px] uppercase tracking-[0.18em] text-mv-muted">The collection</p>
+    <h2 class="font-display text-4xl md:text-5xl font-normal text-mv-ink leading-tight mt-4">
+      A home for every chapter
+    </h2>
+    <p class="text-mv-muted mt-6 leading-relaxed">
+      Ten home types, from compact apartments to garden I-villas — each shaped for a
+      different way of living.
+    </p>
+  </div>
+
+  <p class="md:hidden font-display italic text-mv-muted mt-8 text-sm">swipe horizontally &rarr;</p>
+
+  <div class="overflow-x-auto no-scrollbar mt-6 md:mt-12">
+    <table class="w-full min-w-[640px] border-collapse">
+      <thead>
+        <tr class="border-t border-b border-mv-ink">
+          <th class="text-left py-4 pr-4 text-[11px] uppercase tracking-[0.18em] text-mv-muted font-medium">Unit type</th>
+          <th class="text-left py-4 px-4 text-[11px] uppercase tracking-[0.18em] text-mv-muted font-medium">Built-up</th>
+          <th class="text-left py-4 px-4 text-[11px] uppercase tracking-[0.18em] text-mv-muted font-medium">From</th>
+          <th class="text-left py-4 pl-4 text-[11px] uppercase tracking-[0.18em] text-mv-muted font-medium">Average</th>
+        </tr>
+      </thead>
+      <tbody class="text-mv-ink">
+        <tr class="border-b border-mv-stone/40 hover:bg-mv-sand/40 transition-colors">
+          <td class="py-4 pr-4 font-display text-xl">Millennial · 1BR</td>
+          <td class="py-4 px-4 text-mv-muted">65–80 m²</td>
+          <td class="py-4 px-4 text-mv-forest">EGP 5.4M</td>
+          <td class="py-4 pl-4 text-mv-muted">~EGP 6M</td>
+        </tr>
+        <tr class="border-b border-mv-stone/40 hover:bg-mv-sand/40 transition-colors">
+          <td class="py-4 pr-4 font-display text-xl">Garden Millennial · 1BR</td>
+          <td class="py-4 px-4 text-mv-muted">65 m²</td>
+          <td class="py-4 px-4 text-mv-forest">EGP 6.5M</td>
+          <td class="py-4 pl-4 text-mv-muted">~EGP 6.5M</td>
+        </tr>
+        <tr class="border-b border-mv-stone/40 hover:bg-mv-sand/40 transition-colors">
+          <td class="py-4 pr-4 font-display text-xl">Millennial · 2BR</td>
+          <td class="py-4 px-4 text-mv-muted">110–125 m²</td>
+          <td class="py-4 px-4 text-mv-forest">EGP 6.9M</td>
+          <td class="py-4 pl-4 text-mv-muted">~EGP 8M</td>
+        </tr>
+        <tr class="border-b border-mv-stone/40 hover:bg-mv-sand/40 transition-colors">
+          <td class="py-4 pr-4 font-display text-xl">Garden Millennial · 2BR</td>
+          <td class="py-4 px-4 text-mv-muted">110 m²</td>
+          <td class="py-4 px-4 text-mv-forest">EGP 7.5M</td>
+          <td class="py-4 pl-4 text-mv-muted">~EGP 7.5M</td>
+        </tr>
+        <tr class="border-b border-mv-stone/40 hover:bg-mv-sand/40 transition-colors">
+          <td class="py-4 pr-4 font-display text-xl">Millennial · 3BR</td>
+          <td class="py-4 px-4 text-mv-muted">140–155 m²</td>
+          <td class="py-4 px-4 text-mv-forest">EGP 8.6M</td>
+          <td class="py-4 pl-4 text-mv-muted">~EGP 10M</td>
+        </tr>
+        <tr class="border-b border-mv-stone/40 hover:bg-mv-sand/40 transition-colors">
+          <td class="py-4 pr-4 font-display text-xl">Garden Millennial · 3BR</td>
+          <td class="py-4 px-4 text-mv-muted">140–155 m²</td>
+          <td class="py-4 px-4 text-mv-forest">EGP 9.8M</td>
+          <td class="py-4 pl-4 text-mv-muted">~EGP 10M</td>
+        </tr>
+        <tr class="border-b border-mv-stone/40 hover:bg-mv-sand/40 transition-colors">
+          <td class="py-4 pr-4 font-display text-xl">Sky-villa · 3BR</td>
+          <td class="py-4 px-4 text-mv-muted">160–165 m²</td>
+          <td class="py-4 px-4 text-mv-forest">EGP 11.5M</td>
+          <td class="py-4 pl-4 text-mv-muted">EGP 11.5M</td>
+        </tr>
+        <tr class="border-b border-mv-stone/40 hover:bg-mv-sand/40 transition-colors">
+          <td class="py-4 pr-4 font-display text-xl">Penthouse · 3BR</td>
+          <td class="py-4 px-4 text-mv-muted">—</td>
+          <td class="py-4 px-4 text-mv-forest">—</td>
+          <td class="py-4 pl-4 text-mv-muted">EGP 14–15M</td>
+        </tr>
+        <tr class="border-b border-mv-stone/40 hover:bg-mv-sand/40 transition-colors">
+          <td class="py-4 pr-4 font-display text-xl">I-villa Garden · 3BR</td>
+          <td class="py-4 px-4 text-mv-muted">180–205 m²</td>
+          <td class="py-4 px-4 text-mv-forest">EGP 12.9M</td>
+          <td class="py-4 pl-4 text-mv-muted">EGP 16–18M</td>
+        </tr>
+        <tr class="border-b border-mv-ink hover:bg-mv-sand/40 transition-colors">
+          <td class="py-4 pr-4 font-display text-xl">I-villa Roof · 3BR</td>
+          <td class="py-4 px-4 text-mv-muted">—</td>
+          <td class="py-4 px-4 text-mv-forest">—</td>
+          <td class="py-4 pl-4 text-mv-muted">EGP 15–17M</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="font-display italic text-mv-muted mt-6 text-sm leading-relaxed">
+    Starting prices reflect the 6-year payment plan. Average prices include corner, view,
+    and floor premiums. Mountain View confirms the final schedule per unit at reservation.
+  </p>
+</section>
+
+<!-- 9. The financial proposition -->
+<section class="bg-mv-forest text-mv-cream">
+  <div class="max-w-6xl mx-auto px-6 py-24 md:py-32">
+    <div class="max-w-3xl">
+      <p class="text-[11px] uppercase tracking-[0.18em] text-mv-cream/60">The proposition</p>
+      <h2 class="font-display text-4xl md:text-6xl font-normal leading-tight mt-5">
+        Pay nothing for six months. Then settle over fourteen years.
+      </h2>
+      <p class="text-mv-cream/80 mt-8 text-lg leading-relaxed">
+        Your first installment is semi-annual, collected just three months after
+        reservation — so the early months stay light. Homes are delivered within three
+        years of signing, or two and a half years on the 6-year plan, with a payment
+        rhythm shaped around the way life actually moves.
+      </p>
+      <a href="#register" class="inline-block mt-10 border border-mv-cream rounded-none px-7 py-3 text-sm tracking-wider hover:bg-mv-cream hover:text-mv-forest transition-colors">
+        Register interest
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Location block -->
+<section id="location" class="max-w-6xl mx-auto px-6 py-24 md:py-32">
+  <div class="text-center max-w-2xl mx-auto">
+    <p class="text-[11px] uppercase tracking-[0.18em] text-mv-muted">The setting</p>
+    <h2 class="font-display text-4xl md:text-5xl font-normal text-mv-ink leading-tight mt-4">
+      In front of Hyde Park
+    </h2>
+  </div>
+
+  <div class="mt-12 w-full overflow-hidden bg-mv-sand">
+    <svg viewBox="0 0 1200 520" class="w-full h-full" role="img" aria-label="Map of Creek View location in the New Administrative Capital">
+      <rect width="1200" height="520" fill="#EFE9DA"/>
+      <g stroke="#C9BFA7" stroke-width="6" fill="none">
+        <path d="M0,140 H1200"/><path d="M0,300 H1200"/><path d="M0,430 H1200"/>
+        <path d="M220,0 V520"/><path d="M520,0 V520"/><path d="M820,0 V520"/><path d="M1040,0 V520"/>
+      </g>
+      <path d="M0,360 Q300,330 600,360 T1200,375" stroke="#7A9DA8" stroke-width="22" fill="none"/>
+      <g fill="#234037">
+        <circle cx="300" cy="220" r="40"/><circle cx="360" cy="250" r="30"/>
+        <circle cx="900" cy="180" r="44"/><circle cx="960" cy="210" r="32"/>
+      </g>
+      <!-- Creek View pin -->
+      <g transform="translate(600,260)">
+        <path d="M0,28 C-22,-2 -22,-24 0,-24 C22,-24 22,-2 0,28 Z" fill="#B9663E"/>
+        <circle cx="0" cy="-6" r="8" fill="#F5F1E8"/>
+      </g>
+      <text x="600" y="320" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="26" fill="#1A1B1E">Creek View</text>
+      <text x="300" y="200" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" fill="#6E6A60">Hyde Park</text>
+      <text x="900" y="160" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" fill="#6E6A60">Golden Square</text>
+      <text x="1040" y="475" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" fill="#6E6A60">South 90th Street</text>
+    </svg>
+  </div>
+
+  <div class="mt-16 flex flex-wrap items-center justify-center gap-y-10">
+    <div class="flex flex-col items-center gap-1 px-8 w-1/2 md:w-auto">
+      <p class="font-display text-6xl md:text-7xl font-normal text-mv-forest leading-none">5 min</p>
+      <p class="text-[11px] uppercase tracking-[0.18em] text-mv-muted mt-2">South 90th Street</p>
+    </div>
+    <div class="hidden md:block bg-mv-stone w-px h-16"></div>
+    <div class="flex flex-col items-center gap-1 px-8 w-1/2 md:w-auto">
+      <p class="font-display text-6xl md:text-7xl font-normal text-mv-forest leading-none">3 min</p>
+      <p class="text-[11px] uppercase tracking-[0.18em] text-mv-muted mt-2">Hyde Park</p>
+    </div>
+    <div class="hidden md:block bg-mv-stone w-px h-16"></div>
+    <div class="flex flex-col items-center gap-1 px-8 w-full md:w-auto">
+      <p class="font-display text-6xl md:text-7xl font-normal text-mv-forest leading-none">12 min</p>
+      <p class="text-[11px] uppercase tracking-[0.18em] text-mv-muted mt-2">Golden Square</p>
+    </div>
+  </div>
+
+  <p class="max-w-2xl mx-auto text-center text-mv-muted mt-16 leading-relaxed">
+    Creek View sits in the New Administrative Capital, directly in front of Hyde Park and
+    minutes from South 90th Street and Golden Square. Where the calm of a landscaped
+    community meets the ease of the city.
+  </p>
+</section>
+
+<!-- 11. Image gallery slider -->
+<section id="gallery" class="bg-mv-sand">
+  <div class="max-w-6xl mx-auto px-6 py-24 md:py-32">
+    <div class="text-center max-w-2xl mx-auto">
+      <p class="text-[11px] uppercase tracking-[0.18em] text-mv-muted">Media room</p>
+      <h2 class="font-display text-4xl md:text-5xl font-normal text-mv-ink leading-tight mt-4">
+        Scenes from the community
+      </h2>
+    </div>
+
+    <div id="gallery-track" class="mt-12 flex md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar">
+      <!-- 6 gallery items injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- 12. Register interest section -->
+<section id="register" class="max-w-6xl mx-auto px-6 py-24 md:py-32">
+  <div class="grid md:grid-cols-2 gap-12 items-stretch">
+    <div class="overflow-hidden bg-mv-sand min-h-[420px]">
+      <svg viewBox="0 0 600 800" class="w-full h-full object-cover" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A home at Creek View">
+        <defs>
+          <linearGradient id="skyR" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#F0E7D4"/><stop offset="100%" stop-color="#E5C99F"/>
+          </linearGradient>
+        </defs>
+        <rect width="600" height="800" fill="url(#skyR)"/>
+        <circle cx="430" cy="170" r="64" fill="#F4E3C4" opacity="0.7"/>
+        <rect y="560" width="600" height="240" fill="#2B4A3E"/>
+        <rect x="120" y="280" width="360" height="300" fill="#F5F1E8"/>
+        <g fill="#B9663E" opacity="0.85">
+          <rect x="160" y="320" width="44" height="58"/><rect x="240" y="320" width="44" height="58"/>
+          <rect x="320" y="320" width="44" height="58"/><rect x="400" y="320" width="44" height="58"/>
+          <rect x="160" y="430" width="44" height="58"/><rect x="240" y="430" width="44" height="58"/>
+          <rect x="320" y="430" width="44" height="58"/><rect x="400" y="430" width="44" height="58"/>
+        </g>
+        <g fill="#234037">
+          <circle cx="70" cy="640" r="60"/><circle cx="520" cy="660" r="68"/>
+          <circle cx="300" cy="700" r="54"/>
+        </g>
+        <path d="M0,555 Q300,535 600,560" stroke="#7A9DA8" stroke-width="24" fill="none"/>
+      </svg>
+    </div>
+
+    <div>
+      <p class="text-[11px] uppercase tracking-[0.18em] text-mv-muted">Register interest</p>
+      <h2 class="font-display text-4xl md:text-5xl font-normal text-mv-ink leading-tight mt-4">
+        Begin the conversation
+      </h2>
+      <p class="text-mv-muted mt-6 leading-relaxed">
+        Share a few details and a Mountain View advisor will be in touch to walk you
+        through Creek View.
+      </p>
+
+      <form id="register-form" class="mt-8 space-y-5" novalidate>
+        <div>
+          <label for="fullName" class="block text-sm text-mv-ink mb-1">Full name</label>
+          <input id="fullName" name="fullName" type="text" required
+            class="w-full bg-transparent border border-mv-stone rounded-none px-4 py-3 text-sm focus:outline-none focus:border-mv-forest" />
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="email" class="block text-sm text-mv-ink mb-1">Email</label>
+            <input id="email" name="email" type="email" required
+              class="w-full bg-transparent border border-mv-stone rounded-none px-4 py-3 text-sm focus:outline-none focus:border-mv-forest" />
+          </div>
+          <div>
+            <label for="phone" class="block text-sm text-mv-ink mb-1">Phone</label>
+            <input id="phone" name="phone" type="tel" required
+              class="w-full bg-transparent border border-mv-stone rounded-none px-4 py-3 text-sm focus:outline-none focus:border-mv-forest" />
+          </div>
+        </div>
+        <label class="flex items-center gap-2 text-sm text-mv-muted">
+          <input type="checkbox" name="whatsapp" class="accent-mv-forest w-4 h-4" />
+          This number is available on WhatsApp
+        </label>
+        <div>
+          <label for="unitType" class="block text-sm text-mv-ink mb-1">Unit type of interest</label>
+          <select id="unitType" name="unitType"
+            class="w-full bg-transparent border border-mv-stone rounded-none px-4 py-3 text-sm focus:outline-none focus:border-mv-forest">
+            <option value="">Select a home type</option>
+            <option>Millennial · 1BR</option>
+            <option>Garden Millennial · 1BR</option>
+            <option>Millennial · 2BR</option>
+            <option>Garden Millennial · 2BR</option>
+            <option>Millennial · 3BR</option>
+            <option>Garden Millennial · 3BR</option>
+            <option>Sky-villa · 3BR</option>
+            <option>Penthouse · 3BR</option>
+            <option>I-villa Garden · 3BR</option>
+            <option>I-villa Roof · 3BR</option>
+          </select>
+        </div>
+        <div>
+          <p class="text-sm text-mv-ink mb-2">Purpose</p>
+          <div class="flex flex-wrap gap-x-6 gap-y-2">
+            <label class="flex items-center gap-2 text-sm text-mv-muted">
+              <input type="radio" name="purpose" value="Live in" class="accent-mv-forest w-4 h-4" checked /> Live in
+            </label>
+            <label class="flex items-center gap-2 text-sm text-mv-muted">
+              <input type="radio" name="purpose" value="Investment" class="accent-mv-forest w-4 h-4" /> Investment
+            </label>
+            <label class="flex items-center gap-2 text-sm text-mv-muted">
+              <input type="radio" name="purpose" value="Second home" class="accent-mv-forest w-4 h-4" /> Second home
+            </label>
+          </div>
+        </div>
+        <div>
+          <label for="contactTime" class="block text-sm text-mv-ink mb-1">Preferred contact time</label>
+          <select id="contactTime" name="contactTime"
+            class="w-full bg-transparent border border-mv-stone rounded-none px-4 py-3 text-sm focus:outline-none focus:border-mv-forest">
+            <option value="">Select a time slot</option>
+            <option>Morning · 9am–12pm</option>
+            <option>Afternoon · 12pm–4pm</option>
+            <option>Evening · 4pm–8pm</option>
+          </select>
+        </div>
+        <button type="submit"
+          class="w-full bg-mv-forest text-mv-cream rounded-none px-7 py-3.5 text-sm tracking-wider hover:bg-mv-ink transition-colors">
+          Register interest
+        </button>
+        <p id="form-status" class="hidden font-display italic text-mv-forest text-lg pt-1"></p>
+      </form>
+      <p class="text-sm text-mv-muted mt-5 leading-relaxed">
+        We respond within working hours. Or call us directly on
+        <a href="tel:16201" class="text-mv-forest hover:underline">16201</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 13. Footer -->
+<footer class="bg-mv-ink text-mv-cream/80">
+  <div class="max-w-6xl mx-auto px-6 py-20">
+    <div class="grid md:grid-cols-4 gap-10">
+      <div>
+        <a href="#top" class="font-display tracking-widest text-xl text-mv-cream">
+          MOUNTAIN <span class="text-mv-stone">VIEW</span>
+        </a>
+        <p class="font-display italic text-mv-cream/60 mt-4">Inspired living, since 2005.</p>
+      </div>
+      <div>
+        <p class="text-[11px] uppercase tracking-[0.18em] text-mv-cream/50">Company</p>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><a href="#" class="hover:text-mv-cream transition-colors">Life at MV</a></li>
+          <li><a href="#story" class="hover:text-mv-cream transition-colors">Our Story</a></li>
+          <li><a href="#" class="hover:text-mv-cream transition-colors">Sustainability</a></li>
+          <li><a href="#" class="hover:text-mv-cream transition-colors">MV Foundation</a></li>
+          <li><a href="#gallery" class="hover:text-mv-cream transition-colors">Media Room</a></li>
+          <li><a href="#" class="hover:text-mv-cream transition-colors">E-Services</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-[11px] uppercase tracking-[0.18em] text-mv-cream/50">Help</p>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><a href="#register" class="hover:text-mv-cream transition-colors">Contact Us</a></li>
+          <li><a href="#" class="hover:text-mv-cream transition-colors">Careers</a></li>
+          <li><a href="#" class="hover:text-mv-cream transition-colors">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-[11px] uppercase tracking-[0.18em] text-mv-cream/50">Stay in the loop</p>
+        <p class="text-sm mt-4 text-mv-cream/60">News from Mountain View, a few times a year.</p>
+        <form id="newsletter-form" class="mt-4 flex" novalidate>
+          <input type="email" name="newsletterEmail" placeholder="Your email" required
+            class="flex-1 min-w-0 bg-transparent border border-mv-cream/30 rounded-none px-4 py-2.5 text-sm focus:outline-none focus:border-mv-cream" />
+          <button type="submit" class="border border-mv-cream/30 border-l-0 rounded-none px-4 py-2.5 text-sm hover:bg-mv-cream hover:text-mv-ink transition-colors">
+            Join
+          </button>
+        </form>
+        <p id="newsletter-status" class="hidden font-display italic text-mv-stone mt-2 text-sm"></p>
+      </div>
+    </div>
+
+    <div class="border-t border-mv-cream/15 mt-16 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-mv-cream/50">© 2026 Mountain View. All rights reserved.</p>
+      <div class="flex items-center gap-4 text-mv-cream/60">
+        <a href="#" aria-label="Facebook" class="hover:text-mv-cream transition-colors">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-9h3l1-4h-4V7c0-1.1.4-2 2-2h2V1.1C18.3 1 17 1 15.6 1 12.4 1 10 3 10 6.5V9H7v4h3v9h3z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram" class="hover:text-mv-cream transition-colors">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn" class="hover:text-mv-cream transition-colors">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.5 8h4V24h-4V8zM8 8h3.8v2.2h.05c.53-1 1.83-2.2 3.95-2.2 4.2 0 5 2.8 5 6.4V24h-4v-7c0-1.7-.03-3.9-2.4-3.9s-2.75 1.85-2.75 3.77V24H8V8z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube" class="hover:text-mv-cream transition-colors">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.5a3 3 0 0 0-2.1-2.1C19.5 4 12 4 12 4s-7.5 0-9.4.4A3 3 0 0 0 .5 6.5 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.5 3 3 0 0 0 2.1 2.1C4.5 20 12 20 12 20s7.5 0 9.4-.4a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.5zM9.5 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  // --- Gallery: build 6 landscape 16:9 cards with stylised SVG scenes ---
+  var galleryScenes = [
+    { caption: 'The creek at golden hour', sky: ['#EFE6D2', '#E6C99E'] },
+    { caption: 'Landscaped green corridors', sky: ['#F0E8D6', '#E2C49C'] },
+    { caption: 'Low-rise homes along the water', sky: ['#EEE4CF', '#E8CDA2'] },
+    { caption: 'Shaded courtyards and walking paths', sky: ['#F1E9D7', '#E0C094'] },
+    { caption: 'Garden I-villas at dusk', sky: ['#EDE3CD', '#E5C79C'] },
+    { caption: 'In front of Hyde Park', sky: ['#F0E7D4', '#E3C59A'] }
+  ];
+
+  function galleryCard(scene, i) {
+    var gid = 'gsky' + i;
+    return (
+      '<figure class="shrink-0 w-[85%] sm:w-[60%] md:w-auto snap-center">' +
+        '<div class="aspect-video w-full overflow-hidden bg-mv-cream">' +
+          '<svg viewBox="0 0 640 360" class="w-full h-full" preserveAspectRatio="xMidYMid slice" role="img" aria-label="' + scene.caption + '">' +
+            '<defs><linearGradient id="' + gid + '" x1="0" x2="0" y1="0" y2="1">' +
+              '<stop offset="0%" stop-color="' + scene.sky[0] + '"/>' +
+              '<stop offset="100%" stop-color="' + scene.sky[1] + '"/>' +
+            '</linearGradient></defs>' +
+            '<rect width="640" height="360" fill="url(#' + gid + ')"/>' +
+            '<circle cx="' + (120 + i * 70) + '" cy="80" r="34" fill="#F4E3C4" opacity="0.65"/>' +
+            '<g fill="#2B4A3E" opacity="0.5">' +
+              '<rect x="40" y="150" width="90" height="70"/><rect x="200" y="130" width="120" height="90"/>' +
+              '<rect x="400" y="145" width="100" height="75"/><rect x="540" y="135" width="90" height="85"/>' +
+            '</g>' +
+            '<g fill="#F5F1E8">' +
+              '<rect x="60" y="225" width="120" height="55"/><rect x="240" y="220" width="110" height="60"/>' +
+              '<rect x="420" y="228" width="120" height="52"/>' +
+            '</g>' +
+            '<g fill="#B9663E" opacity="0.85">' +
+              '<rect x="80" y="240" width="14" height="16"/><rect x="110" y="240" width="14" height="16"/>' +
+              '<rect x="260" y="236" width="14" height="16"/><rect x="290" y="236" width="14" height="16"/>' +
+              '<rect x="440" y="244" width="14" height="16"/><rect x="470" y="244" width="14" height="16"/>' +
+            '</g>' +
+            '<path d="M0,290 Q320,272 640,295 L640,318 Q320,300 0,312 Z" fill="#7A9DA8"/>' +
+            '<path d="M0,312 Q320,300 640,318 L640,360 L0,360 Z" fill="#2B4A3E"/>' +
+            '<g fill="#234037">' +
+              '<circle cx="90" cy="320" r="22"/><circle cx="300" cy="332" r="28"/><circle cx="520" cy="322" r="24"/>' +
+            '</g>' +
+          '</svg>' +
+        '</div>' +
+        '<figcaption class="font-display italic text-mv-muted mt-3 text-sm">' + scene.caption + '</figcaption>' +
+      '</figure>'
+    );
+  }
+
+  var track = document.getElementById('gallery-track');
+  if (track) {
+    track.innerHTML = galleryScenes.map(galleryCard).join('');
+  }
+
+  // --- Register form submit ---
+  var form = document.getElementById('register-form');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var status = document.getElementById('form-status');
+      var name = (form.fullName.value || '').trim();
+      var email = (form.email.value || '').trim();
+      var phone = (form.phone.value || '').trim();
+      if (!name || !email || !phone) {
+        status.textContent = 'Please add your name, email, and phone so we can reach you.';
+        status.classList.remove('hidden', 'text-mv-forest');
+        status.classList.add('text-mv-terracotta');
+        return;
+      }
+      var first = name.split(' ')[0];
+      status.textContent = 'Thank you, ' + first + '. A Mountain View advisor will be in touch shortly.';
+      status.classList.remove('hidden', 'text-mv-terracotta');
+      status.classList.add('text-mv-forest');
+      form.reset();
+    });
+  }
+
+  // --- Newsletter form submit ---
+  var news = document.getElementById('newsletter-form');
+  if (news) {
+    news.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var status = document.getElementById('newsletter-status');
+      var email = (news.newsletterEmail.value || '').trim();
+      if (!email) {
+        status.textContent = 'Please enter an email address.';
+      } else {
+        status.textContent = 'You are on the list. Thank you.';
+        news.reset();
+      }
+      status.classList.remove('hidden');
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
