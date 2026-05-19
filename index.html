@@ -593,9 +593,9 @@
     );
   }
 
-  var track = document.getElementById('gallery-track');
-  if (track) {
-    track.innerHTML = galleryScenes.map(galleryCard).join('');
+  var galleryTrack = document.getElementById('gallery-track');
+  if (galleryTrack) {
+    galleryTrack.innerHTML = galleryScenes.map(galleryCard).join('');
   }
 
   // --- Analytics: fire a server-side event (correlated by the rid cookie) ---
