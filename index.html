@@ -8,7 +8,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -45,6 +45,8 @@
   ::selection { background: #2B4A3E; color: #F5F1E8; }
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  html[dir="rtl"] body { font-family: 'Tajawal', 'Inter', sans-serif; }
+  html[dir="rtl"] .font-display { font-family: 'Tajawal', 'Cormorant Garamond', serif; font-style: normal; }
 </style>
 </head>
 <body class="bg-mv-cream text-mv-ink antialiased" id="top">
@@ -95,6 +97,8 @@
     </nav>
 
     <div class="flex items-center gap-3">
+      <button id="lang-toggle" type="button" aria-label="Switch language"
+        class="border border-mv-ink rounded-none px-3 py-2.5 text-sm tracking-wider hover:bg-mv-ink hover:text-mv-cream transition-colors">العربية</button>
       <a href="#register" class="bg-mv-forest text-mv-cream rounded-none px-5 py-2.5 text-sm tracking-wider hover:bg-mv-ink transition-colors">
         Register interest
       </a>
@@ -208,7 +212,7 @@
           Lifestyle, on your terms
         </h2>
         <p class="text-mv-muted mt-6 leading-relaxed">
-          From a first Millennial one-bedroom to a sky-villa or an I-villa with its own
+          From a first Millennial one-bedroom to a penthouse or an I-villa with its own
           garden, Creek View offers a home for every chapter. Each is delivered
           semi-finished, leaving room to shape the interior around the way you live.
         </p>
@@ -223,7 +227,7 @@
       </div>
       <div class="md:order-2 order-1 md:pr-4">
         <div class="aspect-[4/5] w-full overflow-hidden bg-mv-cream">
-          <img src="images/ivilla-sky-villa.png" alt="iVilla homes at Creek View"
+          <img src="images/residences-grid.png" alt="iVilla homes at Creek View"
             class="w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
@@ -239,7 +243,7 @@
       A home for every chapter
     </h2>
     <p class="text-mv-muted mt-6 leading-relaxed">
-      Ten home types, from compact apartments to garden I-villas — each shaped for a
+      Nine home types, from compact apartments to garden I-villas — each shaped for a
       different way of living.
     </p>
   </div>
@@ -292,12 +296,6 @@
           <td class="py-4 px-4 text-mv-muted">140–155 m²</td>
           <td class="py-4 px-4 text-mv-forest">EGP 9.8M</td>
           <td class="py-4 pl-4 text-mv-muted">~EGP 10M</td>
-        </tr>
-        <tr class="border-b border-mv-stone/40 hover:bg-mv-sand/40 transition-colors">
-          <td class="py-4 pr-4 font-display text-xl">Sky-villa · 3BR</td>
-          <td class="py-4 px-4 text-mv-muted">160–165 m²</td>
-          <td class="py-4 px-4 text-mv-forest">EGP 11.5M</td>
-          <td class="py-4 pl-4 text-mv-muted">EGP 11.5M</td>
         </tr>
         <tr class="border-b border-mv-stone/40 hover:bg-mv-sand/40 transition-colors">
           <td class="py-4 pr-4 font-display text-xl">Penthouse · 3BR</td>
@@ -405,7 +403,7 @@
 <section id="register" class="max-w-6xl mx-auto px-6 py-24 md:py-32">
   <div class="grid md:grid-cols-2 gap-12 items-stretch">
     <div class="overflow-hidden bg-mv-sand min-h-[420px]">
-      <img src="images/ivilla-sky-villa.png" alt="A Creek View home at dusk"
+      <img src="images/creek-sunset.png" alt="A Creek View home at dusk"
         class="w-full h-full object-cover" loading="lazy" />
     </div>
 
@@ -427,8 +425,8 @@
         </div>
         <div class="grid sm:grid-cols-2 gap-5">
           <div>
-            <label for="email" class="block text-sm text-mv-ink mb-1">Email</label>
-            <input id="email" name="email" type="email" required
+            <label for="email" class="block text-sm text-mv-ink mb-1">Email (optional)</label>
+            <input id="email" name="email" type="email"
               class="w-full bg-transparent border border-mv-stone rounded-none px-4 py-3 text-sm focus:outline-none focus:border-mv-forest" />
           </div>
           <div>
@@ -452,7 +450,6 @@
             <option>Garden Millennial · 2BR</option>
             <option>Millennial · 3BR</option>
             <option>Garden Millennial · 3BR</option>
-            <option>Sky-villa · 3BR</option>
             <option>Penthouse · 3BR</option>
             <option>I-villa Garden · 3BR</option>
             <option>I-villa Roof · 3BR</option>
@@ -565,17 +562,17 @@
 (function () {
   'use strict';
 
+  var currentLang = 'en';
+
   // --- Gallery ---
   var galleryScenes = [
     { caption: 'The active creek at golden hour', src: 'images/creek-sunset.png' },
-    { caption: 'iVilla Sky Villa homes', src: 'images/ivilla-sky-villa.png' },
     { caption: 'iVilla &amp; Millennial residences', src: 'images/residences-grid.png' },
     { caption: 'Creek View Valleys master plan', src: 'images/masterplan-valleys.png' },
     { caption: 'Creek View Valleys site plan', src: 'images/masterplan-valleys-2.png' },
     { caption: 'Creek View Islands master plan', src: 'images/masterplan-islands.png' },
     { caption: 'How to reach Creek View', src: 'images/location-map.png' },
     { caption: 'iVilla Garden — 3-bedroom layout', src: 'images/ivilla-garden-plan.png' },
-    { caption: 'iVilla Sky Villa floor plans', src: 'images/ivilla-sky-villa-plans.png' },
     { caption: 'iVilla apartment floor plans', src: 'images/ivilla-apartment-plans.png' },
     { caption: 'Millennial apartment floor plans', src: 'images/millennial-plans-1.png' },
     { caption: 'Millennial apartment layouts', src: 'images/millennial-plans-2.png' }
@@ -638,8 +635,10 @@
         status.classList.remove('hidden', 'text-mv-forest', 'text-mv-terracotta');
         status.classList.add(ok ? 'text-mv-forest' : 'text-mv-terracotta');
       }
-      if (!name || !email || !phone) {
-        setStatus('Please add your name, email, and phone so we can reach you.', false);
+      if (!name || !phone) {
+        setStatus(currentLang === 'ar'
+          ? 'يرجى إدخال اسمك ورقم هاتفك حتى نتمكن من التواصل معك.'
+          : 'Please add your name and phone so we can reach you.', false);
         return;
       }
       var payload = {
@@ -665,7 +664,9 @@
       var success = document.getElementById('register-success');
       var successMsg = document.getElementById('register-success-msg');
       if (successMsg) {
-        successMsg.textContent = 'Thank you, ' + first + '. A Mountain View advisor will contact you soon.';
+        successMsg.textContent = currentLang === 'ar'
+          ? ('شكراً لك، ' + first + '. سيتواصل معك أحد مستشاري ماونتن فيو قريباً.')
+          : ('Thank you, ' + first + '. A Mountain View advisor will contact you soon.');
       }
       if (success) {
         success.classList.remove('hidden');
@@ -682,14 +683,167 @@
       var status = document.getElementById('newsletter-status');
       var email = (news.newsletterEmail.value || '').trim();
       if (!email) {
-        status.textContent = 'Please enter an email address.';
+        status.textContent = currentLang === 'ar'
+          ? 'يرجى إدخال بريد إلكتروني.'
+          : 'Please enter an email address.';
       } else {
-        status.textContent = 'You are on the list. Thank you.';
+        status.textContent = currentLang === 'ar'
+          ? 'تم تسجيلك في القائمة. شكراً لك.'
+          : 'You are on the list. Thank you.';
         news.reset();
       }
       status.classList.remove('hidden');
     });
   }
+
+  // --- i18n: English / Arabic ---
+  var i18n = {
+    'Life at Mountain View': 'الحياة في ماونتن فيو',
+    'Communities': 'المجتمعات',
+    'Our Story': 'قصتنا',
+    'Media Room': 'غرفة الإعلام',
+    'Contact': 'تواصل',
+    'Communities · Creek View': 'المجتمعات · كريك فيو',
+    'Register interest': 'سجّل اهتمامك',
+    'Projects · New Capital': 'المشروعات · العاصمة الإدارية',
+    'A new beginning · The view is just the beginning': 'بداية جديدة · الإطلالة مجرد البداية',
+    "Creek View is Mountain View's newest signature community — 119 feddans set directly in front of Hyde Park in the New Administrative Capital, with 70% of the land given to water features, valleys, and landscaped green corridors. A new beginning, where every home looks onto something alive.": 'كريك فيو هو أحدث مجتمعات ماونتن فيو المميّزة — 119 فداناً تقع مباشرةً أمام هايد بارك في العاصمة الإدارية الجديدة، مع تخصيص 70% من الأرض للمسطحات المائية والوديان والممرات الخضراء المنسّقة. بداية جديدة، حيث تطل كل وحدة على شيء نابض بالحياة.',
+    'Discover the project': 'اكتشف المشروع',
+    'Feddan': 'فدان',
+    'Green & water': 'مساحات خضراء ومائية',
+    '3 yrs': '3 سنوات',
+    'From signing': 'من التعاقد',
+    '14 yrs': '14 سنة',
+    'Flexible installments': 'أقساط مرنة',
+    '+6 mo': '+6 أشهر',
+    'After signing': 'بعد التعاقد',
+    'The master plan': 'المخطط العام',
+    'A community built around a creek': 'مجتمع يُبنى حول قناة مائية',
+    'Inspired by the calm of water, Creek View is drawn around a winding creek that threads through 119 feddans of valleys and landscaped green corridors. Seventy percent of the land is left open — to water, to gardens, to room for life to unfold slowly.': 'مستوحى من هدوء الماء، صُمم كريك فيو حول قناة متعرّجة تمتد عبر 119 فداناً من الوديان والممرات الخضراء المنسّقة. تُركت سبعون بالمئة من الأرض مفتوحة — للماء وللحدائق ولمساحةٍ تتيح للحياة أن تتفتح على مهل.',
+    'Set directly in front of Hyde Park in the New Administrative Capital, the community places every home within reach of greenery and the city alike. Where every home looks onto something alive.': 'يقع المجتمع مباشرةً أمام هايد بارك في العاصمة الإدارية الجديدة، ويضع كل وحدة على مقربة من الخضرة والمدينة معاً. حيث تطل كل وحدة على شيء نابض بالحياة.',
+    'Crafted with quiet intent, for a life lived outdoors.': 'صُمم بعناية هادئة، لحياةٍ تُعاش في الهواء الطلق.',
+    'A home for every chapter': 'منزل لكل مرحلة',
+    'Lifestyle, on your terms': 'أسلوب حياة، بشروطك أنت',
+    'From a first Millennial one-bedroom to a penthouse or an I-villa with its own garden, Creek View offers a home for every chapter. Each is delivered semi-finished, leaving room to shape the interior around the way you live.': 'من شقة ميلينيال الأولى بغرفة نوم واحدة إلى بنتهاوس أو آي-فيلا بحديقتها الخاصة، يقدّم كريك فيو منزلاً لكل مرحلة. تُسلّم كل وحدة بنصف تشطيب، مما يترك مساحةً لتشكيل التصميم الداخلي وفق أسلوب حياتك.',
+    'Designed for an elevated lifestyle, the community gathers its amenities along the green corridors — walking paths, shaded courtyards, and water features that make the everyday feel unhurried.': 'صُمم المجتمع لأسلوب حياة راقٍ، ويجمع وسائل الراحة على امتداد الممرات الخضراء — مسارات للمشي وأفنية مظللة ومسطحات مائية تجعل اليوم العادي يبدو متمهلاً.',
+    'A community designed for the rhythm of real life.': 'مجتمع مصمم على إيقاع الحياة الحقيقية.',
+    'The collection': 'المجموعة',
+    'Nine home types, from compact apartments to garden I-villas — each shaped for a different way of living.': 'تسعة أنواع من المنازل، من الشقق المدمجة إلى آي-فيلا الحدائق — صُمم كل منها لأسلوب حياة مختلف.',
+    'swipe horizontally →': 'اسحب أفقياً ←',
+    'Unit type': 'نوع الوحدة',
+    'Built-up': 'المساحة المبنية',
+    'From': 'يبدأ من',
+    'Average': 'المتوسط',
+    'Millennial · 1BR': 'ميلينيال · غرفة واحدة',
+    'Garden Millennial · 1BR': 'جاردن ميلينيال · غرفة واحدة',
+    'Millennial · 2BR': 'ميلينيال · غرفتان',
+    'Garden Millennial · 2BR': 'جاردن ميلينيال · غرفتان',
+    'Millennial · 3BR': 'ميلينيال · 3 غرف',
+    'Garden Millennial · 3BR': 'جاردن ميلينيال · 3 غرف',
+    'Penthouse · 3BR': 'بنتهاوس · 3 غرف',
+    'I-villa Garden · 3BR': 'آي-فيلا جاردن · 3 غرف',
+    'I-villa Roof · 3BR': 'آي-فيلا روف · 3 غرف',
+    'Starting prices reflect the 6-year payment plan. Average prices include corner, view, and floor premiums. Mountain View confirms the final schedule per unit at reservation.': 'تعكس الأسعار المبدئية خطة السداد على 6 سنوات. وتشمل الأسعار المتوسطة علاوات الأركان والإطلالة والدور. تؤكّد ماونتن فيو الجدول النهائي لكل وحدة عند الحجز.',
+    'The proposition': 'العرض',
+    'Pay nothing for six months. Then settle over fourteen years.': 'لا تدفع شيئاً لمدة ستة أشهر. ثم سدّد على مدى أربعة عشر عاماً.',
+    'Your first installment is semi-annual, collected just three months after reservation — so the early months stay light. Homes are delivered within three years of signing, or two and a half years on the 6-year plan, with a payment rhythm shaped around the way life actually moves.': 'قسطك الأول نصف سنوي، يُحصّل بعد ثلاثة أشهر فقط من الحجز — لتبقى الأشهر الأولى خفيفة. تُسلّم الوحدات خلال ثلاث سنوات من التعاقد، أو سنتين ونصف على خطة الـ6 سنوات، بإيقاع سداد مصمم على وقع الحياة الحقيقي.',
+    'The setting': 'الموقع',
+    'In front of Hyde Park': 'أمام هايد بارك',
+    '5 min': '5 دقائق',
+    'South 90th Street': 'محور 90 الجنوبي',
+    '3 min': '3 دقائق',
+    'Hyde Park': 'هايد بارك',
+    '12 min': '12 دقيقة',
+    'Golden Square': 'جولدن سكوير',
+    'Creek View sits in the New Administrative Capital, directly in front of Hyde Park and minutes from South 90th Street and Golden Square. Where the calm of a landscaped community meets the ease of the city.': 'يقع كريك فيو في العاصمة الإدارية الجديدة، مباشرةً أمام هايد بارك وعلى بُعد دقائق من محور 90 الجنوبي وجولدن سكوير. حيث يلتقي هدوء المجتمع المنسّق بسهولة الوصول إلى المدينة.',
+    'Media room': 'غرفة الإعلام',
+    'Scenes from the community': 'مشاهد من المجتمع',
+    'The active creek at golden hour': 'القناة النابضة بالحياة وقت الغروب',
+    'iVilla & Millennial residences': 'مساكن آي-فيلا وميلينيال',
+    'Creek View Valleys master plan': 'المخطط العام لكريك فيو فالييز',
+    'Creek View Valleys site plan': 'مخطط موقع كريك فيو فالييز',
+    'Creek View Islands master plan': 'المخطط العام لكريك فيو آيلاندز',
+    'How to reach Creek View': 'كيفية الوصول إلى كريك فيو',
+    'iVilla Garden — 3-bedroom layout': 'آي-فيلا جاردن — تصميم بثلاث غرف',
+    'iVilla apartment floor plans': 'مخططات شقق آي-فيلا',
+    'Millennial apartment floor plans': 'مخططات شقق ميلينيال',
+    'Millennial apartment layouts': 'تصميمات شقق ميلينيال',
+    'Begin the conversation': 'لنبدأ الحديث',
+    'Share a few details and a Mountain View advisor will be in touch to walk you through Creek View.': 'شارِكنا بعض التفاصيل وسيتواصل معك أحد مستشاري ماونتن فيو ليطلعك على كريك فيو.',
+    'Full name': 'الاسم الكامل',
+    'Email (optional)': 'البريد الإلكتروني (اختياري)',
+    'Phone': 'رقم الهاتف',
+    'This number is available on WhatsApp': 'هذا الرقم متاح على واتساب',
+    'Unit type of interest': 'نوع الوحدة المهتم بها',
+    'Select a home type': 'اختر نوع المنزل',
+    'Purpose': 'الغرض',
+    'Live in': 'للسكن',
+    'Investment': 'للاستثمار',
+    'Second home': 'منزل ثانٍ',
+    'Preferred contact time': 'وقت التواصل المفضل',
+    'Select a time slot': 'اختر موعداً',
+    'Morning · 9am–12pm': 'صباحاً · 9ص – 12م',
+    'Afternoon · 12pm–4pm': 'ظهراً · 12م – 4م',
+    'Evening · 4pm–8pm': 'مساءً · 4م – 8م',
+    'Successfully registered': 'تم التسجيل بنجاح',
+    'Inspired living, since 2005.': 'حياة ملهمة، منذ 2005.',
+    'Company': 'الشركة',
+    'Life at MV': 'الحياة في ماونتن فيو',
+    'Sustainability': 'الاستدامة',
+    'MV Foundation': 'مؤسسة ماونتن فيو',
+    'E-Services': 'الخدمات الإلكترونية',
+    'Help': 'المساعدة',
+    'Contact Us': 'تواصل معنا',
+    'Careers': 'الوظائف',
+    'FAQs': 'الأسئلة الشائعة',
+    'Stay in the loop': 'ابقَ على اطلاع',
+    'News from Mountain View, a few times a year.': 'أخبار من ماونتن فيو، عدة مرات في العام.',
+    'Join': 'اشترك'
+  };
+
+  function normalize(s) { return s.replace(/\s+/g, ' ').trim(); }
+
+  var textNodes = [];
+  var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+    acceptNode: function (n) {
+      var p = n.parentNode;
+      if (!p || p.nodeName === 'SCRIPT' || p.nodeName === 'STYLE') return NodeFilter.FILTER_REJECT;
+      return normalize(n.nodeValue || '') ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+    }
+  });
+  var n;
+  while ((n = walker.nextNode())) {
+    n.i18nOrig = n.nodeValue;
+    textNodes.push(n);
+  }
+
+  var langToggle = document.getElementById('lang-toggle');
+  var newsletterEmail = document.querySelector('input[name="newsletterEmail"]');
+
+  function applyLang(lang) {
+    currentLang = lang;
+    var ar = lang === 'ar';
+    for (var i = 0; i < textNodes.length; i++) {
+      var node = textNodes[i];
+      var key = normalize(node.i18nOrig);
+      node.nodeValue = (ar && i18n[key]) ? i18n[key] : node.i18nOrig;
+    }
+    document.documentElement.lang = ar ? 'ar' : 'en';
+    document.documentElement.dir = ar ? 'rtl' : 'ltr';
+    if (langToggle) langToggle.textContent = ar ? 'English' : 'العربية';
+    if (newsletterEmail) newsletterEmail.placeholder = ar ? 'بريدك الإلكتروني' : 'Your email';
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+  }
+
+  if (langToggle) {
+    langToggle.addEventListener('click', function () {
+      applyLang(currentLang === 'ar' ? 'en' : 'ar');
+    });
+  }
+
+  var savedLang;
+  try { savedLang = localStorage.getItem('lang'); } catch (e) {}
+  if (savedLang === 'ar') applyLang('ar');
 })();
 </script>
 
