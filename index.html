@@ -486,12 +486,15 @@
           class="w-full bg-mv-forest text-mv-cream rounded-none px-7 py-3.5 text-sm tracking-wider hover:bg-mv-ink transition-colors">
           Register interest
         </button>
-        <p id="form-status" class="hidden font-display italic text-mv-forest text-lg pt-1"></p>
+        <p id="form-status" class="hidden font-display italic text-mv-terracotta text-lg pt-1"></p>
       </form>
-      <p class="text-sm text-mv-muted mt-5 leading-relaxed">
-        We respond within working hours. Or call us directly on
-        <a href="tel:16201" class="text-mv-forest hover:underline">16201</a>.
-      </p>
+      <div id="register-success" class="hidden mt-8 border border-mv-forest/30 bg-mv-forest/5 px-6 py-10 text-center">
+        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-mv-forest text-mv-cream">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        </span>
+        <p class="font-display text-2xl text-mv-forest mt-4">Successfully registered</p>
+        <p id="register-success-msg" class="text-mv-muted mt-2 leading-relaxed"></p>
+      </div>
     </div>
   </div>
 </section>
@@ -639,7 +642,6 @@
         setStatus('Please add your name, email, and phone so we can reach you.', false);
         return;
       }
-      var submitBtn = form.querySelector('button[type="submit"]');
       var payload = {
         fullName: name,
         email: email,
@@ -658,11 +660,16 @@
       }).catch(function () {});
       track('submitted_form');
       var first = name.split(' ')[0];
-      setStatus('Thank you, ' + first + '. Your request was submitted successfully — a Mountain View advisor will be in touch shortly.', true);
       form.reset();
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        setTimeout(function () { submitBtn.disabled = false; }, 4000);
+      form.classList.add('hidden');
+      var success = document.getElementById('register-success');
+      var successMsg = document.getElementById('register-success-msg');
+      if (successMsg) {
+        successMsg.textContent = 'Thank you, ' + first + '. A Mountain View advisor will contact you soon.';
+      }
+      if (success) {
+        success.classList.remove('hidden');
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     });
   }
