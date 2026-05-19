@@ -485,14 +485,11 @@
 <!-- 13. Footer -->
 <footer class="bg-mv-navy text-mv-cream/80">
   <div class="max-w-6xl mx-auto px-6 py-20">
-    <div class="grid md:grid-cols-4 gap-10">
+    <div class="grid md:grid-cols-3 gap-10">
       <div>
         <div class="bg-mv-cream inline-block p-3 mb-4">
           <img src="images/logo.png" alt="Mountain View" class="h-16 w-auto" />
         </div>
-        <a href="#top" class="font-display tracking-widest text-xl text-mv-cream">
-          MOUNTAIN <span class="text-mv-stone">VIEW</span>
-        </a>
         <p class="font-display italic text-mv-cream/60 mt-4">Inspired living, since 2005.</p>
       </div>
       <div>
@@ -513,18 +510,6 @@
           <li><a href="#" class="hover:text-mv-cream transition-colors">Careers</a></li>
           <li><a href="#" class="hover:text-mv-cream transition-colors">FAQs</a></li>
         </ul>
-      </div>
-      <div>
-        <p class="text-[11px] uppercase tracking-[0.18em] text-mv-cream/50">Stay in the loop</p>
-        <p class="text-sm mt-4 text-mv-cream/60">News from Mountain View, a few times a year.</p>
-        <form id="newsletter-form" class="mt-4 flex" novalidate>
-          <input type="email" name="newsletterEmail" placeholder="Your email" required
-            class="flex-1 min-w-0 bg-transparent border border-mv-cream/30 rounded-none px-4 py-2.5 text-sm focus:outline-none focus:border-mv-cream" />
-          <button type="submit" class="border border-mv-cream/30 border-l-0 rounded-none px-4 py-2.5 text-sm hover:bg-mv-cream hover:text-mv-ink transition-colors">
-            Join
-          </button>
-        </form>
-        <p id="newsletter-status" class="hidden font-display italic text-mv-stone mt-2 text-sm"></p>
       </div>
     </div>
   </div>
@@ -647,27 +632,6 @@
     });
   }
 
-  // --- Newsletter form submit ---
-  var news = document.getElementById('newsletter-form');
-  if (news) {
-    news.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var status = document.getElementById('newsletter-status');
-      var email = (news.newsletterEmail.value || '').trim();
-      if (!email) {
-        status.textContent = currentLang === 'ar'
-          ? 'يرجى إدخال بريد إلكتروني.'
-          : 'Please enter an email address.';
-      } else {
-        status.textContent = currentLang === 'ar'
-          ? 'تم تسجيلك في القائمة. شكراً لك.'
-          : 'You are on the list. Thank you.';
-        news.reset();
-      }
-      status.classList.remove('hidden');
-    });
-  }
-
   // --- i18n: English / Arabic ---
   var i18n = {
     'Life at Mountain View': 'الحياة في ماونتن فيو',
@@ -766,10 +730,7 @@
     'Help': 'المساعدة',
     'Contact Us': 'تواصل معنا',
     'Careers': 'الوظائف',
-    'FAQs': 'الأسئلة الشائعة',
-    'Stay in the loop': 'ابقَ على اطلاع',
-    'News from Mountain View, a few times a year.': 'أخبار من ماونتن فيو، عدة مرات في العام.',
-    'Join': 'اشترك'
+    'FAQs': 'الأسئلة الشائعة'
   };
 
   function normalize(s) { return s.replace(/\s+/g, ' ').trim(); }
@@ -789,7 +750,6 @@
   }
 
   var langToggle = document.getElementById('lang-toggle');
-  var newsletterEmail = document.querySelector('input[name="newsletterEmail"]');
 
   function applyLang(lang) {
     currentLang = lang;
@@ -802,7 +762,6 @@
     document.documentElement.lang = ar ? 'ar' : 'en';
     document.documentElement.dir = ar ? 'rtl' : 'ltr';
     if (langToggle) langToggle.textContent = ar ? 'English' : 'العربية';
-    if (newsletterEmail) newsletterEmail.placeholder = ar ? 'بريدك الإلكتروني' : 'Your email';
     try { localStorage.setItem('lang', lang); } catch (e) {}
   }
 
