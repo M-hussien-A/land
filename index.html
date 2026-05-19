@@ -243,7 +243,7 @@
       </div>
       <div class="md:order-2 order-1 md:pr-4">
         <div class="aspect-[4/5] w-full overflow-hidden bg-mv-cream">
-          <img src="images/townhouses.jpg" alt="iVilla homes at Creek View"
+          <img src="images/ivilla-sky-villa.png" alt="iVilla homes at Creek View"
             class="w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
@@ -377,7 +377,7 @@
   </div>
 
   <div class="mt-12 w-full overflow-hidden bg-mv-sand">
-    <img src="images/location.jpg" alt="Map showing Creek View in relation to South 90th Street, Hyde Park, and Golden Square"
+    <img src="images/location-map.png" alt="Map showing Creek View in relation to South 90th Street, Hyde Park, and Golden Square"
       class="w-full h-full object-cover" loading="lazy" />
   </div>
 
@@ -416,7 +416,7 @@
     </div>
 
     <div id="gallery-track" class="mt-12 flex md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar">
-      <!-- 6 gallery items injected by JS -->
+      <!-- gallery items injected by JS -->
     </div>
   </div>
 </section>
@@ -425,7 +425,7 @@
 <section id="register" class="max-w-6xl mx-auto px-6 py-24 md:py-32">
   <div class="grid md:grid-cols-2 gap-12 items-stretch">
     <div class="overflow-hidden bg-mv-sand min-h-[420px]">
-      <img src="images/ivilla.jpg" alt="A Creek View home at dusk"
+      <img src="images/ivilla-sky-villa.png" alt="A Creek View home at dusk"
         class="w-full h-full object-cover" loading="lazy" />
     </div>
 
@@ -600,14 +600,20 @@
 (function () {
   'use strict';
 
-  // --- Gallery: 6 landscape 16:9 photographs ---
+  // --- Gallery ---
   var galleryScenes = [
-    { caption: 'The active creek experience', src: 'images/canal.jpg' },
-    { caption: 'I-villa homes at dusk', src: 'images/ivilla.jpg' },
-    { caption: 'The community master plan', src: 'images/masterplan.jpg' },
-    { caption: 'Creek View at golden hour', src: 'images/cover.jpg' },
-    { caption: 'Lakeside living', src: 'images/islands.jpg' },
-    { caption: 'Garden I-villa homes', src: 'images/townhouses.jpg' }
+    { caption: 'The active creek at golden hour', src: 'images/creek-sunset.png' },
+    { caption: 'iVilla Sky Villa homes', src: 'images/ivilla-sky-villa.png' },
+    { caption: 'iVilla &amp; Millennial residences', src: 'images/residences-grid.png' },
+    { caption: 'Creek View Valleys master plan', src: 'images/masterplan-valleys.png' },
+    { caption: 'Creek View Valleys site plan', src: 'images/masterplan-valleys-2.png' },
+    { caption: 'Creek View Islands master plan', src: 'images/masterplan-islands.png' },
+    { caption: 'How to reach Creek View', src: 'images/location-map.png' },
+    { caption: 'iVilla Garden — 3-bedroom layout', src: 'images/ivilla-garden-plan.png' },
+    { caption: 'iVilla Sky Villa floor plans', src: 'images/ivilla-sky-villa-plans.png' },
+    { caption: 'iVilla apartment floor plans', src: 'images/ivilla-apartment-plans.png' },
+    { caption: 'Millennial apartment floor plans', src: 'images/millennial-plans-1.png' },
+    { caption: 'Millennial apartment layouts', src: 'images/millennial-plans-2.png' }
   ];
 
   function galleryCard(scene) {
